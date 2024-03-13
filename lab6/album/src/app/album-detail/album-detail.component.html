@@ -1,0 +1,18 @@
+<button (click)="Back()" class = "back">Back</button>
+<button (click)="goForward() "class = "forward">Forward</button>
+<div class = "container">
+  <div *ngIf = "loaded">
+    <div class="main">
+        <div class="info" *ngIf="album">
+          <h2>{{ album.title }}</h2>
+          <div class="change-title">
+            <label for="input">Change title: </label>
+            <input type="text" id="input" [(ngModel)]="albumTitle" />
+            <button class="save"  (click)="update()">Save</button>
+            <button (click)="viewPhotos()" class = "show">Show photos</button>
+          </div>
+          
+        </div>
+      </div>
+<h3 *ngIf = "!loaded"> Album item is loading </h3>
+</div>
